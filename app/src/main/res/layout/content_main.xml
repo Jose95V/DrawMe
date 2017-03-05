@@ -81,7 +81,7 @@
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="@dimen/alturacolor"
-                android:id="@+id/imageButton5"
+                android:id="@+id/colornegro"
                 android:layout_weight="1"
                 android:tag="#FF000000"
                 android:background="#FF000000" />
@@ -89,7 +89,7 @@
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="@dimen/alturacolor"
-                android:id="@+id/imageButton4"
+                android:id="@+id/colorrojo"
                 android:layout_weight="1"
                 android:tag="#FFFF0000"
                 android:background="#FFFF0000"/>
@@ -97,7 +97,7 @@
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="@dimen/alturacolor"
-                android:id="@+id/imageButton3"
+                android:id="@+id/colorverde"
                 android:layout_weight="1"
                 android:tag="#FF00FF00"
                 android:background="#FF00FF00"/>
@@ -105,7 +105,7 @@
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="@dimen/alturacolor"
-            android:id="@+id/imageButton"
+            android:id="@+id/colorblanco"
             android:layout_weight="1"
             android:tag="#FFFFFFFF"
             android:background="#FFFFFFFF"/>
@@ -113,7 +113,7 @@
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="@dimen/alturacolor"
-                android:id="@+id/imageButton2"
+                android:id="@+id/colorazul"
                 android:layout_weight="1"
                 android:tag="#FF0000FF"
                 android:background="#FF0000FF"/>

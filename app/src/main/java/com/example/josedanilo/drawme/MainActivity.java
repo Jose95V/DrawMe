@@ -8,8 +8,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    ImageButton negro;
+    ImageButton blanco;
+    ImageButton verde;
+    ImageButton azul;
+    ImageButton rojo;
+    Lienzo lienzo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +25,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        negro = (ImageButton) findViewById(R.id.colornegro);
+        blanco = (ImageButton) findViewById(R.id.colorblanco);
+        verde = (ImageButton) findViewById(R.id.colorverde);
+        azul = (ImageButton) findViewById(R.id.colorazul);
+        rojo = (ImageButton) findViewById(R.id.colorrojo);
+
+        negro.setOnClickListener(this);
+        blanco.setOnClickListener(this);
+        verde.setOnClickListener(this);
+        azul.setOnClickListener(this);
+        rojo.setOnClickListener(this);
+
+        lienzo = (Lienzo) findViewById(R.id.lienzo);
 
     }
 
@@ -40,5 +62,31 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()){
+
+            case R.id.colornegro:
+
+                    break;
+            case R.id.colorblanco:
+
+                break;
+            case R.id.colorazul:
+
+                break;
+            case R.id.colorverde:
+
+                break;
+            case R.id.colorrojo:
+
+                break;
+
+
+        }
+
     }
 }
