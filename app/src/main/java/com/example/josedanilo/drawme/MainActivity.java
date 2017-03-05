@@ -17,6 +17,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton verde;
     ImageButton azul;
     ImageButton rojo;
+    ImageButton amarillo;
+    ImageButton marron;
+    ImageButton gris;
+    ImageButton naranja;
+    ImageButton morado;
+
     Lienzo lienzo;
 
     @Override
@@ -31,12 +37,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         verde = (ImageButton) findViewById(R.id.colorverde);
         azul = (ImageButton) findViewById(R.id.colorazul);
         rojo = (ImageButton) findViewById(R.id.colorrojo);
+        amarillo = (ImageButton) findViewById(R.id.coloramarillo);
+        marron = (ImageButton) findViewById(R.id.colormarron);
+        gris = (ImageButton) findViewById(R.id.colorgris);
+        naranja = (ImageButton) findViewById(R.id.colornaranja);
+        morado = (ImageButton) findViewById(R.id.colormorado);
 
         negro.setOnClickListener(this);
         blanco.setOnClickListener(this);
         verde.setOnClickListener(this);
         azul.setOnClickListener(this);
         rojo.setOnClickListener(this);
+        amarillo.setOnClickListener(this);
+        marron.setOnClickListener(this);
+        gris.setOnClickListener(this);
+        naranja.setOnClickListener(this);
+        morado.setOnClickListener(this);
 
         lienzo = (Lienzo) findViewById(R.id.lienzo);
 
@@ -88,6 +104,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 lienzo.setColor(color);
                 break;
             case R.id.colorrojo:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.coloramarillo:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colormarron:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colorgris:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colornaranja:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colormorado:
                 color = v.getTag().toString();
                 lienzo.setColor(color);
                 break;
