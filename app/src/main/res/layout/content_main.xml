@@ -17,7 +17,7 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="0dp">
 
@@ -27,28 +27,31 @@
             android:layout_height="wrap_content"
             android:id="@+id/button4"
             android:layout_weight="1"
-            android:src="@drawable/nuevo" />
+            android:src="@drawable/nuevoo" />
 
         <ImageButton
             android:text="Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/button3"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:src="@drawable/trazz"/>
 
         <ImageButton
             android:text="Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/button2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:src="@drawable/eraser" />
 
         <ImageButton
             android:text="Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/button"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:src="@drawable/guardar" />
 
     </LinearLayout>
 
@@ -91,6 +94,14 @@
                 android:tag="#FF00FF00"
                 android:background="#FF00FF00"/>
 
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alturacolor"
+            android:id="@+id/imageButton"
+            android:layout_weight="1"
+            android:tag="#FFFFFFFF"
+            android:background="#FFFFFFFF"/>
+
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="@dimen/alturacolor"
@@ -99,13 +110,7 @@
                 android:tag="#FF0000FF"
                 android:background="#FF0000FF"/>
 
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_height="@dimen/alturacolor"
-                android:id="@+id/imageButton"
-                android:layout_weight="1"
-                android:tag="#FFFFFFFF"
-                android:background="#FFFFFFFF"/>
+
         </LinearLayout>
 
 </LinearLayout>
