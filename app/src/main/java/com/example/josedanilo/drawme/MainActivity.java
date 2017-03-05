@@ -65,24 +65,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
 
-        switch (view.getId()){
+        String color = null ;
+
+        switch (v.getId()){
 
             case R.id.colornegro:
-
+                color = v.getTag().toString();
+                lienzo.setColor(color);
                     break;
             case R.id.colorblanco:
-
+                color = v.getTag().toString();
+                lienzo.setColor(color);
                 break;
             case R.id.colorazul:
-
+                color = v.getTag().toString();
+                lienzo.setColor(color);
                 break;
             case R.id.colorverde:
-
+                color = v.getTag().toString();
+                lienzo.setColor(color);
                 break;
             case R.id.colorrojo:
-
+                color = v.getTag().toString();
+                lienzo.setColor(color);
                 break;
 
 

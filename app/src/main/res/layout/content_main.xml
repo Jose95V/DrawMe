@@ -118,6 +118,47 @@
                 android:tag="#FF0000FF"
                 android:background="#FF0000FF"/>
 
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alturacolor"
+            android:id="@+id/coloramarillo"
+            android:layout_weight="1"
+            android:tag="#FFFF00"
+            android:background="#FFFF00"/>
+
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alturacolor"
+            android:id="@+id/colormarron"
+            android:layout_weight="1"
+            android:tag="#800000"
+            android:background="#800000"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alturacolor"
+            android:id="@+id/colorgris"
+            android:layout_weight="1"
+            android:tag="#c0c0c0"
+            android:background="#c0c0c0"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alturacolor"
+            android:id="@+id/colornaranja"
+            android:layout_weight="1"
+            android:tag="#FF6600"
+            android:background="#FF6600"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alturacolor"
+            android:id="@+id/colormorado"
+            android:layout_weight="1"
+            android:tag="#800080"
+            android:background="#800080"/>
+
 
         </LinearLayout>
 
