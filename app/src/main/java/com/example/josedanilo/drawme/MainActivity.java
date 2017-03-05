@@ -1,5 +1,6 @@
 package com.example.josedanilo.drawme;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -171,7 +172,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.trazo:
-
+                final Dialog brushDialog = new Dialog(this);
+                brushDialog.setTitle("Tamaño del punto:");
                 break;
 
             case R.id.borrar:
@@ -189,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
 
                 break;
-            
+
         }
 
     }
