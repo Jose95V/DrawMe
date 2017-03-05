@@ -1,10 +1,12 @@
 package com.example.josedanilo.drawme;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -101,6 +103,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    public void onBackPressed(){
+        AlertDialog.Builder myBuild = new AlertDialog.Builder(this);
+        myBuild.setMessage("DrawMe");
+        myBuild.setMessage("Desea salir de la aplicacion");
+
+        myBuild.setPositiveButton("Si", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        myBuild.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog dialog = myBuild.create();
+        dialog.show();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -172,8 +199,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //botones de accion
             case R.id.trazo:
+
                 final Dialog tamanopunto = new Dialog(this);
-                tamanopunto.setTitle("Tamaño del punto:");
+                tamanopunto.setTitle(" Tamaño del punto: ");
                 tamanopunto.setContentView(R.layout.tamano_punto);
 
                 //LIsten for click on  tamaños de los botones
@@ -223,7 +251,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.salir:
 
-                System.exit(0);
+                onBackPressed();
 
                 break;
 

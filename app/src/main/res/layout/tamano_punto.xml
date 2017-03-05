@@ -8,19 +8,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tpequeno"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:text="Mediano"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tmediano"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:text="Grande"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tgrande"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="@style/TextAppearance.Design.CollapsingToolbar.Expanded" />
 </LinearLayout>
