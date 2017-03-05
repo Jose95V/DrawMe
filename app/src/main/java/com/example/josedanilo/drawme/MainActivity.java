@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    //colores
     ImageButton negro;
     ImageButton blanco;
     ImageButton verde;
@@ -23,6 +24,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton naranja;
     ImageButton morado;
 
+    //botones de accion
+    ImageButton nuevo;
+    ImageButton trazo;
+    ImageButton borrar;
+    ImageButton guardar;
+    ImageButton salir;
+
+    //tamaños de pincel
+    Integer ppequeno;
+    Integer pmediano;
+    Integer pgrande;
+    Integer pdefecto;
+
+
     Lienzo lienzo;
 
     @Override
@@ -31,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        //enlazando colores
         negro = (ImageButton) findViewById(R.id.colornegro);
         blanco = (ImageButton) findViewById(R.id.colorblanco);
         verde = (ImageButton) findViewById(R.id.colorverde);
@@ -43,6 +58,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         naranja = (ImageButton) findViewById(R.id.colornaranja);
         morado = (ImageButton) findViewById(R.id.colormorado);
 
+        //enlazando botones de accion
+        nuevo = (ImageButton) findViewById(R.id.nuevo);
+        trazo = (ImageButton) findViewById(R.id.trazo);
+        borrar = (ImageButton) findViewById(R.id.borrar);
+        guardar = (ImageButton) findViewById(R.id.guardar);
+        salir = (ImageButton) findViewById(R.id.salir);
+
+        //Listenes botones de colores
         negro.setOnClickListener(this);
         blanco.setOnClickListener(this);
         verde.setOnClickListener(this);
@@ -54,7 +77,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         naranja.setOnClickListener(this);
         morado.setOnClickListener(this);
 
+        //Listenes botones de accion
+        nuevo.setOnClickListener(this);
+        trazo.setOnClickListener(this);
+        borrar.setOnClickListener(this);
+        guardar.setOnClickListener(this);
+        salir.setOnClickListener(this);
+
+
         lienzo = (Lienzo) findViewById(R.id.lienzo);
+
+        //inicializando pinceles
+        ppequeno = 10;
+        pmediano = 20;
+        pgrande = 30;
+        pdefecto = pmediano;
 
     }
 
@@ -128,7 +165,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 lienzo.setColor(color);
                 break;
 
+            //botones de accion
+            case R.id.nuevo:
 
+                break;
+
+            case R.id.trazo:
+
+                break;
+
+            case R.id.borrar:
+
+                break;
+
+            case R.id.guardar:
+
+                break;
+
+            case R.id.salir:
+
+                break;
+
+            default:
+
+                break;
+            
         }
 
     }
