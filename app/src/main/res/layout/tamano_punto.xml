@@ -3,4 +3,24 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:text="Pequeño"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tpequeno"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:text="Mediano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tmediano"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:text="Grande"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tgrande"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>

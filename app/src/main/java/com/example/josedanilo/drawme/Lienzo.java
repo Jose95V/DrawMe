@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -18,10 +19,13 @@ public class Lienzo extends View {
 
 
     private Path drawPath; // se utiliza para ir pintando las lineas
-    private Paint drawPaint, canvasPaint; // paint dibujar y paint canvas
+    private static Paint drawPaint;  // paint dibujar y paint canvas
+    private  Paint canvasPaint;
     private int paintColor = 0xFF000000; //color inicial
     private Canvas drawCanvas; //canvas
     private Bitmap canvasBitmap; //canvas para guardar
+
+     static float TamanoPunto;
 
     public Lienzo(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -38,6 +42,9 @@ public class Lienzo extends View {
         drawPaint = new Paint();
         drawPaint.setColor(paintColor);
         drawPaint.setAntiAlias(true);
+
+
+
         drawPaint.setStrokeWidth(20);
         drawPaint.setStyle(Paint.Style.STROKE);
         drawPaint.setStrokeJoin(Paint.Join.ROUND);
@@ -100,5 +107,16 @@ public class Lienzo extends View {
         paintColor = Color.parseColor(newColor);
         drawPaint.setColor(paintColor);
     }
+
+    //seleccionar tamaño del punto
+
+    public static void setTamanoPunto(float nuevoTamano){
+
+        drawPaint.setStrokeWidth(nuevoTamano);
+
+
+    }
+
+
 }
 
