@@ -18,9 +18,8 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp"
-        android:layout_marginBottom="1dp">
+        android:layout_weight="0.9"
+        android:layout_height="0dp">
 
         <ImageButton
             android:text="Button"
@@ -28,7 +27,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/nuevo"
             android:layout_weight="1"
-            android:src="@drawable/nuevoo" />
+            android:src="@drawable/nue" />
 
         <ImageButton
             android:text="Button"
@@ -36,7 +35,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/trazo"
             android:layout_weight="1"
-            android:src="@drawable/trazz"/>
+            android:src="@drawable/pen"/>
 
         <ImageButton
             android:text="Button"
@@ -44,7 +43,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/borrar"
             android:layout_weight="1"
-            android:src="@drawable/eraser" />
+            android:src="@drawable/borra" />
 
         <ImageButton
             android:text="Button"
@@ -52,7 +51,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/guardar"
             android:layout_weight="1"
-            android:src="@drawable/guardar" />
+            android:src="@drawable/des" />
 
         <ImageButton
             android:text="Button"
@@ -60,14 +59,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/salir"
             android:layout_weight="1"
-            android:src="@drawable/salir" />
+            android:src="@drawable/out" />
 
     </LinearLayout>
 
     <com.example.josedanilo.drawme.Lienzo
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="6"
         class="com.example.josedanilo.drawme.Lienzo"
         android:id="@+id/lienzo"
         android:background="#FFFFFFFF" />
@@ -76,13 +75,12 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="0.9"
         android:layout_height="0dp">
         
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="horizontal">
 
 
@@ -115,8 +113,8 @@
             android:layout_height="@dimen/alturacolor"
             android:id="@+id/colorblanco"
             android:layout_weight="1"
-            android:tag="#FFFFFFFF"
-            android:background="#FFFFFFFF"/>
+            android:tag="#EAEAAE"
+            android:background="#EAEAAE"/>
 
             <ImageButton
                 android:layout_width="0dp"

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -206,31 +207,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 //LIsten for click on  tamaños de los botones
 
-                TextView smallBtn = (TextView) tamanopunto.findViewById(R.id.tpequeno);
+                RadioButton smallBtn = (RadioButton) tamanopunto.findViewById(R.id.tpequeno);
                 smallBtn.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
-
+                        Lienzo.setBorrado(false);
                         Lienzo.setTamanoPunto(ppequeno);
 
                         tamanopunto.dismiss();
                     }
                 });
-                TextView mediumBtn = (TextView) tamanopunto.findViewById(R.id.tmediano);
+                RadioButton mediumBtn = (RadioButton) tamanopunto.findViewById(R.id.tmediano);
                 mediumBtn.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
-
+                        Lienzo.setBorrado(false);
                         Lienzo.setTamanoPunto(pmediano);
 
                         tamanopunto.dismiss();
                     }
                 });
-                TextView largeBtn = (TextView) tamanopunto.findViewById(R.id.tgrande);
+                RadioButton largeBtn = (RadioButton) tamanopunto.findViewById(R.id.tgrande);
                 largeBtn.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
-
+                        Lienzo.setBorrado(false);
                         Lienzo.setTamanoPunto(pgrande);
 
                         tamanopunto.dismiss();
@@ -242,6 +243,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.borrar:
+
+                final Dialog borrarpunto = new Dialog(this);
+                borrarpunto.setTitle(" Tamaño del borrador: ");
+                borrarpunto.setContentView(R.layout.tamano_punto);
+
+                //LIsten for click on  tamaños de los botones
+
+                RadioButton smallBtnborrar = (RadioButton) borrarpunto.findViewById(R.id.tpequeno);
+                smallBtnborrar.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+
+                        Lienzo.setBorrado(true);
+                        Lienzo.setTamanoPunto(ppequeno);
+
+                        borrarpunto.dismiss();
+                    }
+                });
+                RadioButton mediumBtnborrar = (RadioButton) borrarpunto.findViewById(R.id.tmediano);
+                mediumBtnborrar.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+
+                        Lienzo.setBorrado(true);
+                        Lienzo.setTamanoPunto(pmediano);
+
+                        borrarpunto.dismiss();
+                    }
+                });
+                RadioButton largeBtnborrar = (RadioButton) borrarpunto.findViewById(R.id.tgrande);
+                largeBtnborrar.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+
+                        Lienzo.setBorrado(true);
+                        Lienzo.setTamanoPunto(pgrande);
+
+                        borrarpunto.dismiss();
+                    }
+                });
+
+                borrarpunto.show();
 
                 break;
 

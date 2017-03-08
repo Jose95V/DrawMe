@@ -6,6 +6,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -21,11 +23,12 @@ public class Lienzo extends View {
     private Path drawPath; // se utiliza para ir pintando las lineas
     private static Paint drawPaint;  // paint dibujar y paint canvas
     private  Paint canvasPaint;
-    private int paintColor = 0xFF000000; //color inicial
+    private static int paintColor = 0xFF000000; //color inicial
     private Canvas drawCanvas; //canvas
     private Bitmap canvasBitmap; //canvas para guardar
 
      static float TamanoPunto;
+    private static boolean borrado = false;
 
     public Lienzo(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -115,6 +118,19 @@ public class Lienzo extends View {
         drawPaint.setStrokeWidth(nuevoTamano);
 
 
+    }
+        //set borrado true or false
+    public static void setBorrado(boolean estaborrado){
+
+        borrado = estaborrado;
+        if(borrado) {
+            drawPaint.setColor(Color.WHITE);
+            //drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        }
+        else {
+            drawPaint.setColor(paintColor);
+            //drawPaint.setXfermode(null);
+        }
     }
 
 
