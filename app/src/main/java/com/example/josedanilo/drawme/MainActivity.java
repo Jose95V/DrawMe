@@ -246,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 final Dialog borrarpunto = new Dialog(this);
                 borrarpunto.setTitle(" Tamaño del borrador: ");
-                borrarpunto.setContentView(R.layout.tamano_punto);
+                borrarpunto.setContentView(R.layout.borrar_punto);
 
                 //LIsten for click on  tamaños de los botones
 
@@ -279,6 +279,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         Lienzo.setBorrado(true);
                         Lienzo.setTamanoPunto(pgrande);
+
+                        borrarpunto.dismiss();
+                    }
+                });
+                RadioButton Btnborrar = (RadioButton) borrarpunto.findViewById(R.id.tborrar);
+                Btnborrar.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+
+                        Lienzo.setBorrado(true);
+                        lienzo.NuevoDibujo();
 
                         borrarpunto.dismiss();
                     }

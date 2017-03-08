@@ -133,6 +133,11 @@ public class Lienzo extends View {
         }
     }
 
+    public void NuevoDibujo(){
+
+        drawCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
+        invalidate();
+    }
 
 }
 
