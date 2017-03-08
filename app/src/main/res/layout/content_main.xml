@@ -57,6 +57,14 @@
             android:text="Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:id="@+id/colores"
+            android:layout_weight="1"
+            android:src="@drawable/mscolor" />
+
+        <ImageButton
+            android:text="Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:id="@+id/salir"
             android:layout_weight="1"
             android:src="@drawable/out" />
