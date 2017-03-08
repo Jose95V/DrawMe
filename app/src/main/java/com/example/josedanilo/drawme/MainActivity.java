@@ -29,6 +29,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton gris;
     ImageButton naranja;
     ImageButton morado;
+    ImageButton azulclaro;
+    ImageButton acua;
+    ImageButton fusia;
+    ImageButton verdeclaro;
+    ImageButton rosado;
+    ImageButton naranjaoscuro;
+    ImageButton rosadoclaro;
+    ImageButton rojoclaro;
+    ImageButton blanquito;
+    ImageButton azuloscuro;
 
     private static Lienzo lienzo;
 
@@ -66,6 +76,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         naranja = (ImageButton) findViewById(R.id.colornaranja);
         morado = (ImageButton) findViewById(R.id.colormorado);
 
+        //mas gama de colores- mas_colores xml
+        azulclaro = (ImageButton) findViewById(R.id.colorazulclaro);
+        acua = (ImageButton) findViewById(R.id.coloracua);
+        fusia = (ImageButton) findViewById(R.id.colorfusia);
+        verdeclaro = (ImageButton) findViewById(R.id.colorverdeclaro);
+        rosado = (ImageButton) findViewById(R.id.colorrosado);
+        naranjaoscuro = (ImageButton) findViewById(R.id.colornaranjaosc);
+        rosadoclaro = (ImageButton) findViewById(R.id.colorrosadoclaro);
+        rojoclaro = (ImageButton) findViewById(R.id.colorrojoclaro);
+        blanquito = (ImageButton) findViewById(R.id.colorblanquito);
+        azuloscuro = (ImageButton) findViewById(R.id.colorazuloscuro);
+
         //enlazando botones de accion
         nuevo = (ImageButton) findViewById(R.id.nuevo);
         trazo = (ImageButton) findViewById(R.id.trazo);
@@ -84,7 +106,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gris.setOnClickListener(this);
         naranja.setOnClickListener(this);
         morado.setOnClickListener(this);
-
+        //mas_colores
+        azulclaro.setOnClickListener(this);
+        acua.setOnClickListener(this);
+        fusia.setOnClickListener(this);
+        verdeclaro.setOnClickListener(this);
+        rosado.setOnClickListener(this);
+        naranjaoscuro.setOnClickListener(this);
+        rosadoclaro.setOnClickListener(this);
+        rojoclaro.setOnClickListener(this);
+        blanquito.setOnClickListener(this);
+        azuloscuro.setOnClickListener(this);
         //Listenes botones de accion
         nuevo.setOnClickListener(this);
         trazo.setOnClickListener(this);
@@ -198,7 +230,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 lienzo.setColor(color);
                 break;
 
+            //mas_colores
+            case R.id.colorazulclaro:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.coloracua:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colorfusia:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colorverdeclaro:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colorrosado:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colornaranjaosc:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colorrosadoclaro:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colorrojoclaro:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colorblanquito:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+            case R.id.colorazuloscuro:
+                color = v.getTag().toString();
+                lienzo.setColor(color);
+                break;
+
             //botones de accion
+            case R.id.nuevo:
+
+                break;
+
             case R.id.trazo:
 
                 final Dialog tamanopunto = new Dialog(this);

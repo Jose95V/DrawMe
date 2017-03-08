@@ -3,4 +3,109 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_weight="0.9"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="@dimen/alturacolor"
+                android:id="@+id/colorazulclaro"
+                android:layout_weight="1"
+                android:tag="#0174DF"
+                android:background="#0174DF" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="@dimen/alturacolor"
+                android:id="@+id/coloracua"
+                android:layout_weight="1"
+                android:tag="#2EFEF7"
+                android:background="#2EFEF7"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="@dimen/alturacolor"
+                android:id="@+id/colorfusia"
+                android:layout_weight="1"
+                android:tag="#FF0040"
+                android:background="#FF0040"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="@dimen/alturacolor"
+                android:id="@+id/colorverdeclaro"
+                android:layout_weight="1"
+                android:tag="#82FA58"
+                android:background="#82FA58"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="@dimen/alturacolor"
+                android:id="@+id/colorrosado"
+                android:layout_weight="1"
+                android:tag="#FA5882"
+                android:background="#FA5882"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="@dimen/alturacolor"
+                android:id="@+id/colornaranjaosc"
+                android:layout_weight="1"
+                android:tag="#B45F04"
+                android:background="#B45F04"/>
+
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="@dimen/alturacolor"
+                android:id="@+id/colorrosadoclaro"
+                android:layout_weight="1"
+                android:tag="#F5A9F2"
+                android:background="#F5A9F2"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="@dimen/alturacolor"
+                android:id="@+id/colorrojoclaro"
+                android:layout_weight="1"
+                android:tag="#FE2E2E"
+                android:background="#FE2E2E"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="@dimen/alturacolor"
+                android:id="@+id/colorblanquito"
+                android:layout_weight="1"
+                android:tag="#D0F5A9"
+                android:background="#D0F5A9"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="@dimen/alturacolor"
+                android:id="@+id/colorazuloscuro"
+                android:layout_weight="1"
+                android:tag="#0B2161"
+                android:background="#0B2161"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>
