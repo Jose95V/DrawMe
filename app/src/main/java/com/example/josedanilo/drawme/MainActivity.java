@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton gris;
     ImageButton naranja;
     ImageButton morado;
-    ImageButton azulclaro;
+
+    /*ImageButton azulclaro;
     ImageButton acua;
     ImageButton fusia;
     ImageButton verdeclaro;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton rosadoclaro;
     ImageButton rojoclaro;
     ImageButton blanquito;
-    ImageButton azuloscuro;
+    ImageButton azuloscuro; */
 
     private static Lienzo lienzo;
 
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton trazo;
     ImageButton borrar;
     ImageButton guardar;
+    ImageButton colores;
     ImageButton salir;
 
     //tamaños de pincel
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         morado = (ImageButton) findViewById(R.id.colormorado);
 
         //mas gama de colores- mas_colores xml
-        azulclaro = (ImageButton) findViewById(R.id.colorazulclaro);
+      /*  azulclaro = (ImageButton) findViewById(R.id.colorazulclaro);
         acua = (ImageButton) findViewById(R.id.coloracua);
         fusia = (ImageButton) findViewById(R.id.colorfusia);
         verdeclaro = (ImageButton) findViewById(R.id.colorverdeclaro);
@@ -87,12 +89,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rojoclaro = (ImageButton) findViewById(R.id.colorrojoclaro);
         blanquito = (ImageButton) findViewById(R.id.colorblanquito);
         azuloscuro = (ImageButton) findViewById(R.id.colorazuloscuro);
-
+*/
         //enlazando botones de accion
         nuevo = (ImageButton) findViewById(R.id.nuevo);
         trazo = (ImageButton) findViewById(R.id.trazo);
         borrar = (ImageButton) findViewById(R.id.borrar);
         guardar = (ImageButton) findViewById(R.id.guardar);
+     //   colores = (ImageButton) findViewById(R.id.colores) ;
         salir = (ImageButton) findViewById(R.id.salir);
 
         //Listenes botones de colores
@@ -107,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         naranja.setOnClickListener(this);
         morado.setOnClickListener(this);
         //mas_colores
-        azulclaro.setOnClickListener(this);
+      /*  azulclaro.setOnClickListener(this);
         acua.setOnClickListener(this);
         fusia.setOnClickListener(this);
         verdeclaro.setOnClickListener(this);
@@ -117,11 +120,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rojoclaro.setOnClickListener(this);
         blanquito.setOnClickListener(this);
         azuloscuro.setOnClickListener(this);
+        */
         //Listenes botones de accion
         nuevo.setOnClickListener(this);
         trazo.setOnClickListener(this);
         borrar.setOnClickListener(this);
         guardar.setOnClickListener(this);
+       // colores.setOnClickListener(this);
         salir.setOnClickListener(this);
 
 
@@ -275,6 +280,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //botones de accion
             case R.id.nuevo:
 
+                AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
+                newDialog.setTitle("Nuevo Dibujo");
+                newDialog.setMessage("¿Comenzar un nuevo dibujo (se perdera el progreso actual) ?");
+                newDialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener(){
+
+                public void onClick(DialogInterface dialog, int which){
+
+                    lienzo.NuevoDibujo();
+                    dialog.dismiss();
+                }
+            });
+
+
+
                 break;
 
             case R.id.trazo:
@@ -380,6 +399,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.guardar:
 
                 break;
+
+         //   case R.id.colores:
+
+             //   final Dialog colores = new Dialog(this);
+               // colores.setTitle(" colores : ");
+                //colores.setContentView(R.layout.mas_colores);
+
+                //LIsten for click on  tamaños de los botones
+                  //      Lienzo.setBorrado(false);
+
+                    //    colores.dismiss();
+
+               // colores.show();
+
+               // break;
 
             case R.id.salir:
 
