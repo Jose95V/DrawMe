@@ -1,11 +1,16 @@
 package com.example.josedanilo.drawme;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +20,9 @@ import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -57,7 +65,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     float pgrande;
     float pdefecto;
 
+    //permisos para guardar imagen
+    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1 ;
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                } else {
+
+                }
+                return;
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +90,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        int permissionCheck = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+
+
+            }else {
+
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+
+            }
+
+        }
+
+
+        
+
 
         //enlazando colores
         negro = (ImageButton) findViewById(R.id.colornegro);
@@ -143,17 +189,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onBackPressed(){
         AlertDialog.Builder myBuild = new AlertDialog.Builder(this);
-        myBuild.setMessage("DrawMe");
-        myBuild.setMessage("Desea salir de la aplicacion");
+        myBuild.setTitle("DrawMe");
+        myBuild.setMessage("¿Desea salir de la aplicacion?");
 
-        myBuild.setPositiveButton("Si", new DialogInterface.OnClickListener(){
+        myBuild.setPositiveButton("Aceptar", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
             }
         });
 
-        myBuild.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        myBuild.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -186,6 +232,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 
     @Override
     public void onClick(View v) {
@@ -292,7 +341,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             });
 
+                newDialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener(){
 
+                   public void onClick(DialogInterface dialog, int which){
+
+                       dialog.cancel();
+                   }
+                });
+
+                newDialog.show();
 
                 break;
 
@@ -398,6 +455,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.guardar:
 
+
+                AlertDialog.Builder guardarDibujo = new AlertDialog.Builder(this);
+                guardarDibujo.setTitle("DrawMe:");
+                guardarDibujo.setMessage("¿Desea guardar el dubujo en la galeria?");
+                guardarDibujo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener(){
+
+                   public void onClick(DialogInterface dialog, int which){
+
+                       lienzo.setDrawingCacheEnabled(true);
+
+                       String imguardar = MediaStore.Images.Media.insertImage(getContentResolver(), lienzo.getDrawingCache(),
+                               UUID.randomUUID().toString()+".jpg","drawing");
+
+                       if(imguardar!=null){
+
+                           Toast saveToast = Toast.makeText(getApplicationContext(),"Dibujo guardado en galeria!", Toast.LENGTH_SHORT);
+
+                           saveToast.show();
+                       }
+                       else{
+
+                           Toast unsaveToast = Toast.makeText(getApplicationContext(),"Error! La imagen no ah sido guardada.", Toast.LENGTH_SHORT);
+
+                           unsaveToast.show();
+
+                       }
+                       lienzo.destroyDrawingCache();
+
+                   }
+
+
+                });
+
+                guardarDibujo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener(){
+
+                   public void onClick(DialogInterface dialog, int which){
+
+                       dialog.cancel();
+                   }
+
+                });
+
+                guardarDibujo.show();
+
+
                 break;
 
          //   case R.id.colores:
@@ -428,4 +530,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
+
 }
